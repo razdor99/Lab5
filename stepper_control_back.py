@@ -12,11 +12,11 @@ with open('stepper.txt', 'r') as f:
   data = json.load(f)
 
 step = Stepper()
-if data['button'] == 'Zero':
+if data['button'] == "Zero":
   step.Zero() 
  
 
-if data['button'] == 'Change Angle':
+if data['button'] == "Change Angle":
   step.goAngle('slider1')
 
 
