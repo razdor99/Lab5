@@ -13,7 +13,7 @@ with open('stepper.txt', 'r') as f:
 
 step = Stepper()
 if data['button'] == "Zero":
-  step.Zero() 
+  step.zero() 
  
 
 if data['button'] == "Change Angle":
