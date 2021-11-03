@@ -36,8 +36,8 @@ def delay_us(tus): # use microseconds to improve time resolution
 
 class Stepper:
   currentAngle = 0;
-  def __init__(self, angle):
-    self.angle = angle
+  def __init__(self, address):
+    self.address = PCF8591(address)
   def goAngle(self,angle):
     
     if abs(int(angle) - Stepper.currentAngle) < 180 and int(angle) > Stepper.currentAngle:
@@ -63,7 +63,7 @@ class Stepper:
       
   def zero(self):
     GPIO.output(ledPin,1)
-    while int(PCF8591.read()) >= 200: 
+    while int(self.address.read(0)) <= 200: 
       moveSteps(1,1) 
       time.sleep(.01)
     GPIO.output(ledPin,0)

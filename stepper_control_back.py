@@ -11,13 +11,13 @@ api = "Y0O61FF5ZVI5VQ7W" # Enter your API key
 with open('stepper.txt', 'r') as f:
   data = json.load(f)
 
-step = Stepper()
+step = Stepper(0x48)
 if data["button"] == "Zero":
   step.zero() 
  
 
 if data["button"] == "Change Angle":
-  step.goAngle("slider1")
+  step.goAngle(int(data["slider1"]))
 
 
 while True:
