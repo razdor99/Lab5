@@ -26,7 +26,7 @@ def halfstep(dir):
 
 def moveSteps(steps, dir):
   # move the actuation sequence a given number of half steps
-  for x in range(steps):
+  for x in range(int(steps)):
     halfstep(dir)
 
 def delay_us(tus): # use microseconds to improve time resolution
