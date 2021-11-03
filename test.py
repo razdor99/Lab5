@@ -87,7 +87,7 @@ class Stepper:
       
   def zero(self):
     GPIO.output(ledPin,1)
-    while int(self.address.read(0)) <= 198: 
+    while int(self.address.read(0)) <= 255: 
       moveSteps(20,1) 
       time.sleep(.01)
       print(int(self.address.read(0)))
