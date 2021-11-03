@@ -70,6 +70,6 @@ class Stepper:
     Stepper.currentAngle = 0
 
 step = Stepper(40)
-step.goAngle(30)
+step.goAngle(40)
 
 
