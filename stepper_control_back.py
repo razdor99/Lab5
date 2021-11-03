@@ -12,17 +12,17 @@ with open('stepper.txt', 'r') as f:
   data = json.load(f)
 
 step = Stepper()
-if data['button'] == "Zero":
+if data["button"] == "Zero":
   step.zero() 
  
 
-if data['button'] == "Change Angle":
-  step.goAngle('slider1')
+if data["button"] == "Change Angle":
+  step.goAngle("slider1")
 
 
 while True:
   params = {
-    1: data['slider1'],
+    1: data["slider1"],
     "api_key":api}
   params = urlencode(params) # reformat dictionary as a GET string
   url = "https://api.thingspeak.com/update?" + params
