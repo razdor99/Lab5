@@ -95,5 +95,5 @@ class Stepper:
     print(int(self.address.read(0)))
 
 
-step = Stepper()
+step = Stepper(0x48)
 step.zero()
