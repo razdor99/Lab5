@@ -90,10 +90,10 @@ class Stepper:
     while int(self.address.read(0)) <= 255: 
       moveSteps(20,1) 
       time.sleep(.01)
+      print(int(self.address.read(0)))
     GPIO.output(ledPin,0)
     Stepper.currentAngle = 0
-    print(int(self.address.read(0)))
-    return(int(self.address.read(0)))
+
 
 
 step = Stepper(0x48)
