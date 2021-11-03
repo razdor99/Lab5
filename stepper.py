@@ -69,4 +69,7 @@ class Stepper:
     GPIO.output(ledPin,0)
     Stepper.currentAngle = 0
 
+step = Stepper(40)
+step.goAngle(30)
+
 

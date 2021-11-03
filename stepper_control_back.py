@@ -14,8 +14,8 @@ with open('stepper.txt', 'r') as f:
 step = Stepper(0x48)
 if data["button"] == "Zero":
   step.zero() 
- 
 
+  
 if data["button"] == "Change Angle":
   step.goAngle(int(data["slider1"]))
 
