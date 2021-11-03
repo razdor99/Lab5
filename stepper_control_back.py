@@ -3,21 +3,23 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 from stepper import Stepper
 import json
-with open('stepper.txt', 'r') as f:
-  data = json.load(f)
-
-step = Stepper()
-if data['button'] == "Zero":
-  step.Zero() 
- 
-
-if data['button'] == "Change Angle":
-  step.goAngle('slider1')
-
 from urllib.request import urlopen # use to send/receive data
 from urllib.parse import urlencode # use to structure a GET string
 import time
 api = "Y0O61FF5ZVI5VQ7W" # Enter your API key
+
+with open('stepper.txt', 'r') as f:
+  data = json.load(f)
+
+step = Stepper()
+if data['button'] == 'Zero':
+  step.Zero() 
+ 
+
+if data['button'] == 'Change Angle':
+  step.goAngle('slider1')
+
+
 while True:
   params = {
     1: data['slider1'],
