@@ -8,7 +8,7 @@ with open('stepper.txt', 'r') as f:
 
 step = Stepper()
 if data['button'] == "Zero":
- Stepper.Zero() 
+  step.Zero() 
  
 
 if data['button'] == "Change Angle":
@@ -22,8 +22,8 @@ while True:
   params = {
     1: data['slider1'],
     "api_key":api}
-params = urlencode(params) # reformat dictionary as a GET string
-url = "https://api.thingspeak.com/update?" + params
-response = urlopen(url) # open the URL
-print(response.status, response.reason) # display request response
-time.sleep(15.1) # 15 sec minimum
+  params = urlencode(params) # reformat dictionary as a GET string
+  url = "https://api.thingspeak.com/update?" + params
+  response = urlopen(url) # open the URL
+  print(response.status, response.reason) # display request response
+  time.sleep(15.1) # 15 sec minimum
