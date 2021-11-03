@@ -1,3 +1,4 @@
+#!/usr/bin/python37all
 import smbus
 class PCF8591:
 

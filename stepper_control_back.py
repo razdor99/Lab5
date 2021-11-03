@@ -1,3 +1,4 @@
+#!/usr/bin/python37all
 import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 from stepper import Stepper
@@ -10,7 +11,7 @@ if data['button'] == "Zero":
  Stepper.Zero() 
  
 
-if data['slider1'] == "Change Angle":
+if data['button'] == "Change Angle":
   step.goAngle('slider1')
 
 from urllib.request import urlopen # use to send/receive data
