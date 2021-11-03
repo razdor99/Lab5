@@ -16,7 +16,7 @@ with open('stepper.txt', 'w') as f:
 
 print('Content-type: text/html\n\n')
 print('<html>')
-print('<form action="/cgi-bin/led-pwm.py" method="POST">')
+print('<form action="/cgi-bin/stepper_control.py" method="POST">')
 print('<input type="range" name="slider1" min ="0" max="360" value ="0"><br>')
 print('<input type="submit" name="button" value="Change Angle">')
 print('<input type="submit" name="button" value="Zero">')
