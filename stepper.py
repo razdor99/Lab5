@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 from PCF8591 import PCF8591
 GPIO.setmode(GPIO.BCM)
-ledPin = 15
+ledPin = 26
 GPIO.setup(ledPin, GPIO.OUT)
 
 pins = [18,21,22,23] # controller inputs: in1, in2, in3, in4
