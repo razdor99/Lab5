@@ -62,7 +62,7 @@ class Stepper:
       
   def zero(self):
     GPIO.output(ledPin,1)
-    while int(PCF8591.read()) >= 120: 
+    while int(PCF8591.read()) >= 200: 
       moveSteps(1,1) 
       time.sleep(.01)
     GPIO.output(ledPin,0)
