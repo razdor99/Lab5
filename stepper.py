@@ -1,7 +1,7 @@
 #!/usr/bin/python37all
 import RPi.GPIO as GPIO
 import time
-from PCF8591 import PCF8591
+#from PCF8591 import PCF8591
 GPIO.setmode(GPIO.BCM)
 ledPin = 26
 GPIO.setup(ledPin, GPIO.OUT)
@@ -68,6 +68,27 @@ class Stepper:
       time.sleep(.01)
     GPIO.output(ledPin,0)
     Stepper.currentAngle = 0
-      
+
+
+import smbus
+class PCF8591:
+
+  def __init__(self,address):
+    self.bus = smbus.SMBus(1)
+    self.address = address
+
+  def read(self,chn): #channel
+      try:
+          self.bus.write_byte(self.address, 0x40 | chn)  # 01000000
+          self.bus.read_byte(self.address) # dummy read to start conversion
+      except Exception as e:
+          print ("Address: %s \n%s" % (self.address,e))
+      return self.bus.read_byte(self.address)
+
+  def write(self,val):
+      try:
+          self.bus.write_byte_data(self.address, 0x40, int(val))
+      except Exception as e:
+          print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 step = Stepper()
 step.goAngle(30)
