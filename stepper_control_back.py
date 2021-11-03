@@ -8,7 +8,7 @@ from urllib.parse import urlencode # use to structure a GET string
 import time
 api = "Y0O61FF5ZVI5VQ7W" # Enter your API key
 
-with open('stepper.txt', encoding='utf-8') as f:
+with open('stepper.txt', encoding='utf-8', errors='ignore') as f:
   data = json.load(f)
 
 step = Stepper(0x48)
