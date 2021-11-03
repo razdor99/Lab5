@@ -42,22 +42,22 @@ class Stepper:
     
     if abs(int(angle) - Stepper.currentAngle) < 180 and int(angle) > Stepper.currentAngle:
       newAngle = abs(Stepper.currentAngle - int(angle))
-      steps = int(newAngle)*(512/360)
+      steps = int(newAngle)*(4096/360)
       moveSteps(steps, 1)
       Stepper.currentAngle = angle
     elif abs(angle - Stepper.currentAngle) < 180 and int(angle) <= Stepper.currentAngle:
       newAngle = abs(int(angle) - Stepper.currentAngle)
-      steps = int(newAngle)*(512/360)
+      steps = int(newAngle)*(4096/360)
       moveSteps(steps, -1)
       Stepper.currentAngle = angle
     elif abs(int(angle) - Stepper.currentAngle)>=180 and int(angle) > Stepper.currentAngle:
       newAngle = abs(int(angle)-Stepper.currentAngle - 360)
-      steps = int(newAngle)*(512/360)
+      steps = int(newAngle)*(4096/360)
       moveSteps(steps, 1)
       Stepper.currentAngle = angle
     else:
       newAngle = abs(abs(angle-Stepper.currentAngle)-360)
-      steps = int(newAngle)*(512/360)
+      steps = int(newAngle)*(4096/360)
       moveSteps(steps, -1)
       Stepper.currentAngle = angle
       
@@ -90,6 +90,5 @@ class PCF8591:
           self.bus.write_byte_data(self.address, 0x40, int(val))
       except Exception as e:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
-#step = Stepper(30)
-#step.goAngle(30)
-moveSteps(4096,1)
+step = Stepper(30)
+step.goAngle(30)
