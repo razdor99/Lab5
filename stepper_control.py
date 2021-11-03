@@ -10,7 +10,7 @@ s1 = data.getvalue('slider1')
 button = data.getvalue('button')
 
 data = {"slider1":s1,"button":button}
-with open('stepper.txt', encoding='utf-8', errors='ignore') as f:
+with open('stepper.txt', 'w') as f:
   json.dump(data,f)
 
 
