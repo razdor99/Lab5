@@ -92,4 +92,4 @@ class PCF8591:
           print ("Error: Device address: 0x%2X \n%s" % (self.address,e))
 #step = Stepper(30)
 #step.goAngle(30)
-moveSteps(1000,1)
+moveSteps(4096,1)
