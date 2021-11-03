@@ -28,4 +28,4 @@ while True:
   url = "https://api.thingspeak.com/update?" + params
   response = urlopen(url) # open the URL
   print(response.status, response.reason) # display request response
-  time.sleep(15.1) # 15 sec minimum
+  time.sleep(16) # 15 sec minimum
